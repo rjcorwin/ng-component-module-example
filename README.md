@@ -1,28 +1,9 @@
 # NgComponentModuleExample
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.1.
+This repository serves as an example how how you make a Component from one Module available in the Component of another Module. 
 
-## Development server
+The [first commit](https://github.com/rjsteinert/ng-component-module-example/commit/1042ec02cbbfd53b66ccd8faa6edb5e7ca5637ca) in this repository is the result of `ng new ng-component-module-example`. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The [second commit](https://github.com/rjsteinert/ng-component-module-example/commit/656f66bc1dffd337434d31918a0854da0d39c614) is the result of creating a Foo Module and then a Foo Component in the Foo Module with `cd src/app && ng generate module foo && cd foo && ng generate component foo`. 
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+The [third commit](https://github.com/rjsteinert/ng-component-module-example/commit/2c9b0cb8bd89da9e34274ba10cba7669d17711e2) shows the 4 changes you need to make to then be able to use Foo Component in App Component via the App Module importing the Foo Module.
