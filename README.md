@@ -8,4 +8,37 @@ The [second commit](https://github.com/rjsteinert/ng-component-module-example/co
 
 The [third commit](https://github.com/rjsteinert/ng-component-module-example/commit/2c9b0cb8bd89da9e34274ba10cba7669d17711e2) shows the 4 changes you need to make to then be able to use Foo Component in App Component via the App Module importing the Foo Module.
 
-The last step is to restart the `npm start` you are probably running.
+
+1. Generate the module and component.
+```
+cd ./src/app/
+ng generate module foo
+cd foo
+ng generate component foo
+```
+2. In the Module declaration, tell the Module to export the Component when this module is imported into other Modules.
+```
+  "declarations": [ FooComponent ],
++ "exports": [ FooComponent ]
+```
+3. From your App Module, or any other module, ES6 import the FooModule Class from the Foo Module's `.module` file.
+```
+import { FooModule } from './foo/foo.module';
+```
+4. From your App Module declaration, or any other module declaration, Angular import the FooModule Class.
+```
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
++   FooModule,
+    HttpModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {
+```
+5. The last step is to restart the `npm start` you are probably running.
